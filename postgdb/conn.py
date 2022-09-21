@@ -6,8 +6,8 @@ import numpy as np
 
 engine = create_engine('postgresql+psycopg2://postgres:root@host.docker.internal/traffic_data')
 
-VEHICLE_SCHEMA = "timed_vehicle_data_schema.sql"
-TRAJECTORIES_SCHEMA = "trajectory_schema.sql"
+VEHICLE_SCHEMA = "vehicle_data_schema.sql"
+TRAJECTORIES_SCHEMA = "tra_schema.sql"
 
 
 def create_table():
