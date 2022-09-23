@@ -8,10 +8,10 @@ from symbol import return_stmt
 
 cwd=os.getcwd()
 sys.path.append(f'../scripts/')
-sys.path.append(f'../pgsql/')
+sys.path.append(f'../postgdb/')
 sys.path.append(f'../temp_storage/')
 sys.path.insert(0,os.path.abspath(os.path.dirname(__file__)))
-from loader import DataExtractor
+from loader import Extractor
 import conn
 
 data_extractor=DataExtractor()
