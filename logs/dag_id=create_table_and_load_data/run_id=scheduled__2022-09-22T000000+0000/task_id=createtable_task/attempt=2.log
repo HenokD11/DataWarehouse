@@ -1,0 +1,125 @@
+[2022-09-23 04:25:41,033] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: create_table_and_load_data.createtable_task scheduled__2022-09-22T00:00:00+00:00 [queued]>
+[2022-09-23 04:25:41,046] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: create_table_and_load_data.createtable_task scheduled__2022-09-22T00:00:00+00:00 [queued]>
+[2022-09-23 04:25:41,046] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-23 04:25:41,047] {taskinstance.py:1357} INFO - Starting attempt 2 of 2
+[2022-09-23 04:25:41,047] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-23 04:25:41,067] {taskinstance.py:1377} INFO - Executing <Task(PostgresOperator): createtable_task> on 2022-09-22 00:00:00+00:00
+[2022-09-23 04:25:41,072] {standard_task_runner.py:52} INFO - Started process 135 to run task
+[2022-09-23 04:25:41,077] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'create_table_and_load_data', 'createtable_task', 'scheduled__2022-09-22T00:00:00+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/data_load.py', '--cfg-path', '/tmp/tmpftycvtlz', '--error-file', '/tmp/tmpyqp48uzv']
+[2022-09-23 04:25:41,078] {standard_task_runner.py:80} INFO - Job 8: Subtask createtable_task
+[2022-09-23 04:25:41,143] {task_command.py:369} INFO - Running <TaskInstance: create_table_and_load_data.createtable_task scheduled__2022-09-22T00:00:00+00:00 [running]> on host 6a84cb181fff
+[2022-09-23 04:25:41,187] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1451, in _run_raw_task
+    self._execute_task_with_callbacks(context, test_mode)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1555, in _execute_task_with_callbacks
+    task_orig = self.render_templates(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 2202, in render_templates
+    rendered_task = self.task.render_template_fields(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 1179, in render_template_fields
+    self._do_render_template_fields(self, self.template_fields, context, jinja_env, set())
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 71, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/abstractoperator.py", line 348, in _do_render_template_fields
+    seen_oids,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/abstractoperator.py", line 385, in render_template
+    template = jinja_env.get_template(value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/jinja2/environment.py", line 997, in get_template
+    return self._load_template(name, globals)
+  File "/home/airflow/.local/lib/python3.7/site-packages/jinja2/environment.py", line 958, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/airflow/.local/lib/python3.7/site-packages/jinja2/loaders.py", line 125, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/jinja2/loaders.py", line 214, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/create_table.sql
+[2022-09-23 04:25:41,197] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=create_table_and_load_data, task_id=createtable_task, execution_date=20220922T000000, start_date=20220923T042541, end_date=20220923T042541
+[2022-09-23 04:25:41,217] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/email.py:115: PendingDeprecationWarning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+  send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+
+[2022-09-23 04:25:41,217] {configuration.py:494} WARNING - section/key [smtp/smtp_user] not found in config
+[2022-09-23 04:25:41,218] {email.py:224} INFO - Email alerting: attempt 1
+[2022-09-23 04:25:41,227] {configuration.py:494} WARNING - section/key [smtp/smtp_user] not found in config
+[2022-09-23 04:25:41,227] {email.py:224} INFO - Email alerting: attempt 1
+[2022-09-23 04:25:41,228] {taskinstance.py:1944} ERROR - Failed to send email to: ['henokdes1@gmail.com']
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1451, in _run_raw_task
+    self._execute_task_with_callbacks(context, test_mode)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1555, in _execute_task_with_callbacks
+    task_orig = self.render_templates(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 2202, in render_templates
+    rendered_task = self.task.render_template_fields(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 1179, in render_template_fields
+    self._do_render_template_fields(self, self.template_fields, context, jinja_env, set())
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 71, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/abstractoperator.py", line 348, in _do_render_template_fields
+    seen_oids,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/abstractoperator.py", line 385, in render_template
+    template = jinja_env.get_template(value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/jinja2/environment.py", line 997, in get_template
+    return self._load_template(name, globals)
+  File "/home/airflow/.local/lib/python3.7/site-packages/jinja2/environment.py", line 958, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/airflow/.local/lib/python3.7/site-packages/jinja2/loaders.py", line 125, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/jinja2/loaders.py", line 214, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/create_table.sql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 2316, in email_alert
+    send_email(task.email, subject, html_content)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/email.py", line 71, in send_email
+    **kwargs,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/email.py", line 115, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/email.py", line 226, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/email.py", line 260, in _get_smtp_connection
+    else smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/usr/local/lib/python3.7/smtplib.py", line 251, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.7/smtplib.py", line 336, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.7/smtplib.py", line 307, in _get_socket
+    self.source_address)
+  File "/usr/local/lib/python3.7/socket.py", line 728, in create_connection
+    raise err
+  File "/usr/local/lib/python3.7/socket.py", line 716, in create_connection
+    sock.connect(sa)
+OSError: [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1942, in handle_failure
+    self.email_alert(error, task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 2318, in email_alert
+    send_email(task.email, subject, html_content_err)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/email.py", line 71, in send_email
+    **kwargs,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/email.py", line 115, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/email.py", line 226, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/email.py", line 260, in _get_smtp_connection
+    else smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/usr/local/lib/python3.7/smtplib.py", line 251, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.7/smtplib.py", line 336, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.7/smtplib.py", line 307, in _get_socket
+    self.source_address)
+  File "/usr/local/lib/python3.7/socket.py", line 728, in create_connection
+    raise err
+  File "/usr/local/lib/python3.7/socket.py", line 716, in create_connection
+    sock.connect(sa)
+OSError: [Errno 99] Cannot assign requested address
+[2022-09-23 04:25:41,244] {standard_task_runner.py:97} ERROR - Failed to execute job 8 for task createtable_task (sql/create_table.sql; 135)
+[2022-09-23 04:25:41,290] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-09-23 04:25:41,349] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
