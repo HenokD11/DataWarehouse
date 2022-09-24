@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: speed
+    description: "fastest vehicles fetching"
+    
+  - name: summary
+    description: "A summary of vehicles by distance and speed"
+  
+  - name: summary2
+    description: "A summary of vehicles by distance and speed"
